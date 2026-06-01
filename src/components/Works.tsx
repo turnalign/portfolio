@@ -27,7 +27,7 @@ export default function Works() {
           No.02〜12は業務委託案件です。クライアントの秘密保持のため、詳細は割愛しています。
         </p>
         <div className="works-grid">
-          {works.map((work) => (
+          {works.map((work, index) => (
             <div key={work.id} className="wk">
               <div className="wk__inner" onClick={() => setSelected(work)}>
                 <div className="wk__thumb">
@@ -36,6 +36,7 @@ export default function Works() {
                     alt={work.title}
                     width={400}
                     height={225}
+                    priority={index < 4}
                     style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top center" }}
                   />
                 </div>
