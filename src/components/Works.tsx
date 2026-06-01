@@ -2,11 +2,18 @@
 
 import { works, Work } from "@/data/works";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import WorkModal from "./WorkModal";
 
 export default function Works() {
   const [selected, setSelected] = useState<Work | null>(null);
+
+  useEffect(() => {
+    works.forEach((work) => {
+      const img = new window.Image();
+      img.src = `/_next/image?url=${encodeURIComponent(work.imagePng)}&w=828&q=75`;
+    });
+  }, []);
 
   return (
     <section className="sec">
@@ -20,7 +27,7 @@ export default function Works() {
           No.02〜12は業務委託案件です。クライアントの秘密保持のため、詳細は割愛しています。
         </p>
         <div className="works-grid">
-          {works.map((work) => (
+          {works.map((work, index) => (
             <div key={work.id} className="wk">
               <div className="wk__inner" onClick={() => setSelected(work)}>
                 <div className="wk__thumb">
@@ -29,6 +36,7 @@ export default function Works() {
                     alt={work.title}
                     width={400}
                     height={225}
+                    priority={index < 4}
                     style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top center" }}
                   />
                 </div>
