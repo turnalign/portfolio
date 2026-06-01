@@ -2,11 +2,18 @@
 
 import { works, Work } from "@/data/works";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import WorkModal from "./WorkModal";
 
 export default function Works() {
   const [selected, setSelected] = useState<Work | null>(null);
+
+  useEffect(() => {
+    works.forEach((work) => {
+      const img = new window.Image();
+      img.src = `/_next/image?url=${encodeURIComponent(work.imagePng)}&w=828&q=75`;
+    });
+  }, []);
 
   return (
     <section className="sec">
