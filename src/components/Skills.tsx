@@ -5,7 +5,6 @@ export default function Skills() {
     <section className="sec">
       <div className="wrap">
         <div className="sec-head">
-          <span className="sec-head__num">02</span>
           <h2 className="sec-head__title">スキルセット</h2>
           <span className="sec-head__en">Skills</span>
         </div>
