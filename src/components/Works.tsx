@@ -16,7 +16,6 @@ export default async function Works() {
     <section className="sec">
       <div className="wrap">
         <div className="sec-head">
-          <span className="sec-head__num">03</span>
           <h2 className="sec-head__title">制作実績</h2>
           <span className="sec-head__en">Works</span>
         </div>
