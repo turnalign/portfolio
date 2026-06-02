@@ -1,6 +1,6 @@
 import { client, Work } from "@/lib/microcms";
 import Image from "next/image";
-import WorkModal from "./WorkModal";
+import Link from "next/link";
 
 async function getWorks(): Promise<Work[]> {
   const data = await client.getList<Work>({
@@ -21,7 +21,7 @@ export default async function Works() {
         </div>
         <div className="works-grid">
           {works.map((work) => (
-            <div key={work.id} className="wk">
+            <Link key={work.id} href={`/works/${work.id}`} className="wk">
               <div className="wk__inner">
                 <div className="wk__thumb">
                   <Image
@@ -37,7 +37,7 @@ export default async function Works() {
                   <h3 className="wk__name">{work.title}</h3>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
