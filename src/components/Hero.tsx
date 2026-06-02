@@ -21,13 +21,12 @@ export default function Hero() {
             </g>
           </svg>
         </div>
-        <p className="hero__byline">Web Creator</p>
+        <p className="hero__byline">Frontend Engineer</p>
         <h1 className="hero__heading">Shimanouchi Yohei</h1>
-        <p className="hero__text">
-          ポートフォリオをご覧いただきありがとうございます。<br />
-          佐賀県在住のWebクリエイターの島内 洋平と申します。<br />
-          コーポレートサイト・LP・ECサイトのデザイン・コーディング・WordPress実装を承っています。
-        </p>
+        <div className="hero__text">
+          <p>2016年から、WordPressでのサイト制作を中心に、デザインからコーディングまで一貫して手がけてきました。</p>
+          <p>現在は、React・Next.js・TypeScript を使ったモダンなフロントエンド開発に取り組んでいます。</p>
+        </div>
       </div>
     </header>
   );
