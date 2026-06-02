@@ -1,6 +1,5 @@
 "use client";
-
-import { Work } from "@/data/works";
+import { Work } from "@/lib/microcms";
 import Image from "next/image";
 import { useEffect } from "react";
 
@@ -30,23 +29,18 @@ export default function WorkModal({ work, onClose }: Props) {
         </button>
         <div className="modal__image">
           <Image
-            src={work.imagePng}
+            src={work.thumbnail.url}
             alt={work.title}
-            width={800}
-            height={450}
+            width={work.thumbnail.width}
+            height={work.thumbnail.height}
             style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top center" }}
           />
         </div>
         <div className="modal__body">
-          <p className="modal__num">{work.num}</p>
+          <span className="wk__category">{work.category}</span>
           <h3 className="modal__title">{work.title}</h3>
-          <div className="modal__tags">
-            {work.tags.map((tag, i) => (
-              <span key={i} className="t">{tag}</span>
-            ))}
-          </div>
           <div className="modal__desc">
-            <p>{work.description}</p>
+            <p>{work.body}</p>
           </div>
           {work.url && (
             <a className="modal__link" href={work.url} target="_blank" rel="noopener">
