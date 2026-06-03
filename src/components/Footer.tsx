@@ -12,9 +12,7 @@ export default function Footer() {
         </svg>
         GitHub
       </a>
-      <p className="text-xs text-zinc-400 dark:text-zinc-600 tracking-wider">
-        &copy; 2026 Shimanouchi
-      </p>
+      <p className="text-xs text-zinc-400 dark:text-zinc-600 tracking-wider">&copy; 2026 Shimanouchi</p>
     </footer>
   );
 }

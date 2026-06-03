@@ -15,6 +15,30 @@ body {
   transition: background-color 0.5s, color 0.5s;
 }
 
+.body-content h3 {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #a1a1aa;
+  margin-bottom: 0.75rem;
+}
+.dark .body-content h3 {
+  color: #71717a;
+}
+.body-content p {
+  font-size: 1rem;
+  line-height: 1.85;
+  color: #52525b;
+  margin-bottom: 1.5rem;
+}
+.dark .body-content p {
+  color: #a1a1aa;
+}
+.body-content p:last-child {
+  margin-bottom: 0;
+}
+
 .font-outfit { font-family: var(--font-en); }
 
 .card {

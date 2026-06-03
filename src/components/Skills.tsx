@@ -2,7 +2,6 @@ export default function Skills() {
   return (
     <section className="card px-8 py-10 md:px-12 md:py-12 fade-up">
       <h2 className="font-outfit text-3xl md:text-4xl font-bold text-zinc-900 dark:text-white tracking-wide mb-8">Skills</h2>
-
       <div>
         <div className="skill-block">
           <h3 className="text-xs font-bold tracking-widest uppercase text-zinc-400 dark:text-zinc-500 mb-4">これまで使ってきた技術</h3>
@@ -18,7 +17,6 @@ export default function Skills() {
             WordPressでのコーポレートサイト・LP制作を中心に、オリジナルテーマの制作やACFを使った更新しやすい構成づくりを行ってきました。デザインはFigmaで行います。
           </p>
         </div>
-
         <div className="skill-block">
           <h3 className="text-xs font-bold tracking-widest uppercase text-zinc-400 dark:text-zinc-500 mb-4">いま取り組んでいる技術</h3>
           <div className="flex flex-wrap gap-2 mb-4">
@@ -31,7 +29,6 @@ export default function Skills() {
             このポートフォリオサイト自体をNext.js・TypeScriptで構築し、microCMSと組み合わせたヘッドレス構成にしています。あわせて、AIを仕様の整理や実装・デバッグに活用しています。
           </p>
         </div>
-
         <div className="skill-block">
           <h3 className="text-xs font-bold tracking-widest uppercase text-zinc-400 dark:text-zinc-500 mb-4">チーム開発</h3>
           <div className="flex flex-wrap gap-2 mb-4">

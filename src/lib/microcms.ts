@@ -16,4 +16,6 @@ export type Work = {
   };
   body: string;
   url?: string;
+  description?: string;
+  tags?: { fieldId: string; name: string }[];
 };
