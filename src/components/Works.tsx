@@ -32,9 +32,23 @@ export default async function Works() {
                 <span className="block text-[10px] font-bold tracking-widest uppercase text-zinc-400 dark:text-zinc-500 mb-2">
                   {work.category}
                 </span>
-                <h3 className="text-lg md:text-xl font-bold text-zinc-900 dark:text-zinc-100">
+                <h3 className="text-lg md:text-xl font-bold text-zinc-900 dark:text-zinc-100 mb-3">
                   {work.title}
                 </h3>
+                {work.description && (
+                  <p className="text-sm md:text-base leading-[1.8] text-zinc-500 dark:text-zinc-400 mb-5">
+                    {work.description}
+                  </p>
+                )}
+                {work.tags && work.tags.length > 0 && (
+                  <div className="flex flex-wrap gap-2">
+                    {work.tags.map((tag, i) => (
+                      <span key={i} className="tag">
+                        {tag.name}
+                      </span>
+                    ))}
+                  </div>
+                )}
               </div>
             </div>
           </Link>
