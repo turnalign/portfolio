@@ -1,34 +1,45 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Outfit, Noto_Sans_JP } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const outfit = Outfit({
   subsets: ["latin"],
+  weight: ["400", "700", "800"],
+  variable: "--font-outfit",
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const notoSansJP = Noto_Sans_JP({
   subsets: ["latin"],
+  weight: ["400", "500", "700"],
+  variable: "--font-noto",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "島内洋平 | Webクリエイター・フロントエンド",
-  description:
-    "佐賀県在住のWebクリエイター・島内洋平のポートフォリオ。コーポレートサイト・LP・WordPress実装の実務経験をベースに、Next.js・Tailwind CSS・microCMSなどモダンな技術での制作に取り組んでいます。",
+  title: "Yohei Shimanouchi - Frontend Engineer",
+  description: "Frontend Engineer portfolio",
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col">{children}</body>
+    <html lang="ja" suppressHydrationWarning>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){const s=localStorage.getItem('theme');if(s==='dark'||(!s&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.classList.add('dark')}})()`,
+          }}
+        />
+      </head>
+      <body
+        className={`${outfit.variable} ${notoSansJP.variable} bg-zinc-100 dark:bg-zinc-950 text-zinc-800 dark:text-zinc-200 antialiased overflow-x-hidden min-h-screen transition-colors duration-500`}
+      >
+        {children}
+      </body>
     </html>
   );
 }
