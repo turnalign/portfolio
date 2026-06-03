@@ -13,33 +13,32 @@ export default async function Works() {
   const works = await getWorks();
 
   return (
-    <section className="sec">
-      <div className="wrap">
-        <div className="sec-head">
-          <h2 className="sec-head__title">制作実績</h2>
-          <span className="sec-head__en">Works</span>
-        </div>
-        <div className="works-grid">
-          {works.map((work) => (
-            <Link key={work.id} href={`/works/${work.id}`} className="wk">
-              <div className="wk__inner">
-                <div className="wk__thumb">
-                  <Image
-                    src={work.thumbnail.url}
-                    alt={work.title}
-                    width={work.thumbnail.width}
-                    height={work.thumbnail.height}
-                    style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top center" }}
-                  />
-                </div>
-                <div className="wk__info">
-                  <span className="wk__category">{work.category}</span>
-                  <h3 className="wk__name">{work.title}</h3>
-                </div>
+    <section className="fade-up">
+      <h2 className="font-outfit text-3xl md:text-4xl font-bold text-zinc-900 dark:text-white tracking-wide mb-8">Works</h2>
+
+      <div className="space-y-4">
+        {works.map((work) => (
+          <Link key={work.id} href={`/works/${work.id}`} className="work-card card block overflow-hidden">
+            <div className="flex flex-col md:flex-row">
+              <div className="md:w-60 lg:w-64 flex-shrink-0 aspect-video md:aspect-auto relative bg-zinc-100 dark:bg-zinc-800">
+                <Image
+                  src={work.thumbnail.url}
+                  alt={work.title}
+                  fill
+                  className="object-cover object-top"
+                />
               </div>
-            </Link>
-          ))}
-        </div>
+              <div className="flex-1 px-7 py-7 md:px-8 md:py-8 flex flex-col justify-center min-h-[240px]">
+                <span className="block text-[10px] font-bold tracking-widest uppercase text-zinc-400 dark:text-zinc-500 mb-2">
+                  {work.category}
+                </span>
+                <h3 className="text-lg md:text-xl font-bold text-zinc-900 dark:text-zinc-100">
+                  {work.title}
+                </h3>
+              </div>
+            </div>
+          </Link>
+        ))}
       </div>
     </section>
   );
