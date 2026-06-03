@@ -11,10 +11,9 @@ export default function Skills() {
             <span className="tag">HTML / CSS</span>
             <span className="tag">JavaScript</span>
             <span className="tag">jQuery</span>
-            <span className="tag">Figma</span>
           </div>
           <p className="text-base md:text-lg leading-[1.85] text-zinc-600 dark:text-zinc-400">
-            WordPressでのコーポレートサイト・LP制作を中心に、オリジナルテーマの制作やACFを使った更新しやすい構成づくりを行ってきました。デザインはFigmaで行います。
+            WordPressでのコーポレートサイト・LP制作を中心に、デザインから実装まで幅広く手がけてきました。
           </p>
         </div>
         <div className="skill-block">
@@ -37,7 +36,7 @@ export default function Skills() {
             <span className="tag">Pull Request</span>
           </div>
           <p className="text-base md:text-lg leading-[1.85] text-zinc-600 dark:text-zinc-400">
-            サイト制作が中心だったこともあり、これまではチーム開発でのバージョン管理に深く関わる機会がありませんでした。現在は、ブランチ運用やPull Requestをベースとした進め方を、個人開発の中でも取り入れています。
+            Git・GitHubを使った開発を、個人開発の中で日常的に行っています。チームでの開発はこれから経験を積んでいきたい領域です。
           </p>
         </div>
       </div>

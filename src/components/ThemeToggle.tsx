@@ -26,7 +26,7 @@ export default function ThemeToggle() {
     <button
       onClick={toggle}
       aria-label={dark ? "ライトモード" : "ダークモード"}
-      className="fixed top-5 right-5 md:top-8 md:right-8 z-50 p-3 rounded-full bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700 shadow-sm text-zinc-500 dark:text-zinc-400 hover:scale-110 transition-all focus:outline-none cursor-pointer"
+      className="p-2 rounded-full bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700 shadow-sm text-zinc-500 dark:text-zinc-400 hover:scale-110 transition-all focus:outline-none cursor-pointer"
     >
       {dark ? (
         <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
