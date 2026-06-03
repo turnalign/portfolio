@@ -1,20 +1,14 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 export default function ThemeToggle() {
-  const [dark, setDark] = useState(false);
-
-  useEffect(() => {
+  const [dark, setDark] = useState(() => {
+    if (typeof window === "undefined") return false;
     const stored = localStorage.getItem("theme");
-    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    const isDark = stored === "dark" || (!stored && prefersDark);
-    setDark(isDark);
-    if (isDark) {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
-  }, []);
+    if (stored === "dark") return true;
+    if (stored === "light") return false;
+    return window.matchMedia("(prefers-color-scheme: dark)").matches;
+  });
 
   function toggle() {
     const next = !dark;
@@ -31,8 +25,8 @@ export default function ThemeToggle() {
   return (
     <button
       onClick={toggle}
-      aria-label={dark ? "ライトモードに切り替える" : "ダークモードに切り替える"}
-      className="fixed top-5 right-5 md:top-8 md:right-8 z-50 p-3 rounded-full bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700 shadow-sm text-zinc-500 dark:text-zinc-400 hover:scale-110 transition-all focus:outline-none"
+      aria-label={dark ? "ライトモード" : "ダークモード"}
+      className="fixed top-5 right-5 md:top-8 md:right-8 z-50 p-3 rounded-full bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700 shadow-sm text-zinc-500 dark:text-zinc-400 hover:scale-110 transition-all focus:outline-none cursor-pointer"
     >
       {dark ? (
         <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
