@@ -1,11 +1,12 @@
 ﻿@import "tailwindcss";
 
+@variant dark (&:where(.dark, .dark *));
+
 @theme {
   --font-en: 'Outfit', sans-serif;
   --font-ja: 'Noto Sans JP', sans-serif;
 }
 
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 
 body {
@@ -16,7 +17,6 @@ body {
 
 .font-outfit { font-family: var(--font-en); }
 
-/* カード */
 .card {
   background: #ffffff;
   border: 1px solid #e4e4e7;
@@ -30,7 +30,6 @@ body {
   box-shadow: 0 2px 16px rgba(0,0,0,0.4);
 }
 
-/* Worksカードホバー */
 a.work-card:hover {
   box-shadow: 0 8px 32px rgba(0,0,0,0.12);
   transform: translateY(-3px);
@@ -40,7 +39,6 @@ a.work-card:hover {
   transform: translateY(-3px);
 }
 
-/* タグ */
 .tag {
   display: inline-block;
   font-size: 0.7rem;
@@ -56,7 +54,6 @@ a.work-card:hover {
   color: #a1a1aa;
 }
 
-/* Skillsセクションの区切り線 */
 .skill-block + .skill-block {
   border-top: 1px solid #e4e4e7;
   padding-top: 1.75rem;
@@ -66,7 +63,6 @@ a.work-card:hover {
   border-top-color: #2d2d32;
 }
 
-/* SVGアニメーション */
 #hat {
   stroke: #18181b;
   stroke-dashoffset: 370;
@@ -108,7 +104,6 @@ a.work-card:hover {
   100% { stroke-dashoffset: 0;   fill: #f4f4f5; }
 }
 
-/* スクロールフェードイン */
 .fade-up {
   opacity: 0;
   transform: translateY(32px);
@@ -120,21 +115,19 @@ a.work-card:hover {
   transform: translateY(0);
 }
 
-/* Heroテキストアニメーション */
 .hero-line {
   opacity: 0;
   animation: fadeInUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
-.hero-line.d1 { animation-delay: 0.30s; }
-.hero-line.d2 { animation-delay: 0.40s; }
-.hero-line.d3 { animation-delay: 0.50s; }
+.hero-line.d1 { animation-delay: 0.90s; }
+.hero-line.d2 { animation-delay: 1.00s; }
+.hero-line.d3 { animation-delay: 1.10s; }
 
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(20px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 
-/* Hero名前のレスポンシブフォントサイズ */
 .hero-name { font-size: clamp(2.5rem, 11vw, 3.5rem); }
 @media (min-width: 640px)  { .hero-name { font-size: clamp(3.5rem, 9vw, 5rem);  } }
 @media (min-width: 768px)  { .hero-name { font-size: clamp(4.5rem, 8vw, 6rem);  } }
