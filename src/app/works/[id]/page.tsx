@@ -26,6 +26,10 @@ export default async function WorkDetail({
 
   return (
     <>
+    <div className="fixed inset-0 z-0 pointer-events-none">
+      <div className="absolute top-[-10%] left-[-5%] w-[600px] h-[600px] rounded-full bg-blue-200/30 blur-[130px] dark:bg-blue-900/20" />
+      <div className="absolute bottom-[-10%] right-[-5%] w-[500px] h-[500px] rounded-full bg-slate-200/40 blur-[110px] dark:bg-slate-900/25" />
+    </div>
     <ThemeToggle />
     <main className="relative z-10 max-w-3xl mx-auto px-6 md:px-8 pt-16 pb-40">
 
