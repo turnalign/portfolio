@@ -7,7 +7,10 @@
   --font-ja: 'Noto Sans JP', sans-serif;
 }
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  min-height: 100dvh;
+}
 
 body {
   font-family: var(--font-ja);
