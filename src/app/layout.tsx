@@ -5,11 +5,14 @@ import "./globals.css";
 const outfit = Outfit({
   variable: "--font-en",
   subsets: ["latin"],
+  display: "swap",
 });
 
 const notoSansJP = Noto_Sans_JP({
   variable: "--font-ja",
   subsets: ["latin"],
+  weight: ["400", "700"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
