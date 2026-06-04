@@ -20,7 +20,7 @@ export default async function Works() {
         {works.map((work) => (
           <Link key={work.id} href={`/works/${work.id}`} className="work-card card block overflow-hidden">
             <div className="flex flex-col md:flex-row">
-              <div className="md:w-60 lg:w-64 flex-shrink-0 aspect-video md:aspect-auto relative bg-zinc-100 dark:bg-zinc-800">
+              <div className="md:w-60 lg:w-64 shrink-0 aspect-video md:aspect-auto relative bg-zinc-100 dark:bg-zinc-800">
                 <Image
                   src={work.thumbnail.url}
                   alt={work.title}
@@ -28,7 +28,7 @@ export default async function Works() {
                   className="object-cover object-top"
                 />
               </div>
-              <div className="flex-1 px-7 py-7 md:px-8 md:py-8 flex flex-col justify-center min-h-[240px]">
+              <div className="flex-1 px-7 py-7 md:px-8 md:py-8 flex flex-col justify-center min-h-60">
                 <span className="block text-[10px] font-bold tracking-widest uppercase text-zinc-400 dark:text-zinc-500 mb-2">
                   {work.category}
                 </span>
