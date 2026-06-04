@@ -4,6 +4,15 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import ThemeToggle from "@/components/ThemeToggle";
 
+export async function generateStaticParams() {
+  const data = await client.getList<Work>({
+    endpoint: "works",
+  });
+  return data.contents.map((work) => ({
+    id: work.id,
+  }));
+}
+
 async function getWork(id: string): Promise<Work> {
   try {
     const work = await client.get<Work>({
