@@ -2,7 +2,7 @@ export default function Footer() {
   return (
     <footer className="fade-up flex flex-col md:flex-row items-center justify-between gap-4 border-t border-zinc-200 dark:border-zinc-800 pt-8 pb-4">
       <a
-        href="https://github.com/turnalign"
+        href="https://github.com/yshimanouchi"
         target="_blank"
         rel="noopener noreferrer"
         className="flex items-center gap-2 text-xs font-bold tracking-widest uppercase text-zinc-400 hover:text-zinc-700 dark:hover:text-zinc-200 transition-colors"
