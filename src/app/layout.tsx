@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Outfit, Noto_Sans_JP } from "next/font/google";
 import "./globals.css";
+import ScrollToTop from "@/components/ScrollToTop";
 
 const outfit = Outfit({
   variable: "--font-en",
@@ -39,6 +40,7 @@ export default function RootLayout({
         />
       </head>
       <body className="bg-zinc-100 dark:bg-zinc-950 text-zinc-800 dark:text-zinc-200 antialiased min-h-full flex flex-col transition-colors duration-500">
+        <ScrollToTop />
         {children}
       </body>
     </html>
